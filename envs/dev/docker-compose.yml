@@ -16,7 +16,7 @@ services:
       file: ../docker-common.yml
       service: smart_backend
     build: ../../backend/
-    image: rti/smart-backend:R_0_0_1
+    image: rubentea16/smart_backend:latest
     depends_on:
       - postgres
       - redis
@@ -26,7 +26,7 @@ services:
       file: ../docker-common.yml
       service: smart_frontend
     build: ../../frontend/
-    image: rti/smart-frontend:R_0_0_1
+    image: rubentea16/smart_frontend:latest
     command: node_modules/.bin/webpack --watch
 
   celery_worker:
@@ -34,7 +34,7 @@ services:
       file: ../docker-common.yml
       service: celery_worker
     build: ../../backend/
-    image: rti/smart-backend:R_0_0_1
+    image: rubentea16/smart_backend:latest
     depends_on:
       - postgres
       - redis
